@@ -1,0 +1,22 @@
+.Login-pera {
+    color: rgba(var(--f52, 142, 142, 142), 1);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20px;
+
+}
+
+.Login-last-pera {
+    font-weight: 400;
+    font-size: 15px;
+    color: rgba(var(--f52, 142, 142, 142), 1);
+    word-break: break-word;
+}
+
+.mt-min-1 {
+    margin-top: -1rem !important;
+}
+
+.f-13 {
+    font-size: 13px;
+}

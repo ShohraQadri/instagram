@@ -1,0 +1,36 @@
+img {
+    width: 10%;
+}
+
+.Navbar {
+    box-shadow: 1px 2px 3px #e0dcdc;
+    align-items: center !important;
+}
+
+.Navbar ul {
+    list-style: none;
+}
+
+.Navbar ul li {
+    padding: 0 0.5rem;
+    color: black;
+    font-size: 18px;
+}
+
+.primaryBtn {
+    cursor: pointer;
+    font-weight: bolder;
+    padding: 13px 25px;
+    font-size: 0.8rem;
+    border: none;
+    color: white;
+    background: #db183c;
+    border-radius: 15px;
+    margin-left: 20px;
+    transition: all 0.25s ease;
+}
+
+.primaryBtn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -10px rgba(219, 24, 44, 0.6);
+}
