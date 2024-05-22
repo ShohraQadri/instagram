@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "preinstall": "npm rebuild bcrypt",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite --open && nodemon server.js",
     "start": "node app.js",
