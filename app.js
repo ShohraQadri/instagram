@@ -69,11 +69,11 @@ mongoose.connection.on("error", (err) => {
 });
 
 // Serving frontend
-app.use(express.static(path.join(__dirname, "./instagram/dist")));
+app.use(express.static(path.join(__dirname, "instagram/dist")));
 
 app.get("*", (req, res) => {
     res.sendFile(
-        path.join(__dirname, "./instagram/dist/index.html"),
+        path.join(__dirname, "instagram/dist/index.html"),
         function (err) {
             if (err) {
                 res.status(500).send(err);
