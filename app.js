@@ -43,7 +43,7 @@
 
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000 || 'https://instagram-clone-i7a5.onrender.com/';
 const mongoose = require("mongoose");
 const { mongoUrl } = require("./keys");
 const cors = require('cors');

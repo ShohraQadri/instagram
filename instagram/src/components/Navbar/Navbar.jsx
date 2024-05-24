@@ -35,6 +35,34 @@ function Navbar({ login }) {
                 </>
             );
         }
+    };
+    // eslint-disable-next-line no-unused-vars
+    const loginStatusMobile = () => {
+        const token = localStorage.getItem("jwt")
+        if (login || token) {
+            return (
+                <>
+                    <li key="profile"><Link to="/profile">Profile</Link></li>
+                    <li key="followingpost"><Link to="/followingpost">My Following</Link></li>
+                    <li key="createpost"><Link to="/createpost">Createpost</Link></li>
+                    <Link to={""}>
+                        <button className='primaryBtn border-2 cursor-pointer font-bold' onClick={() =>
+                            setmodalOpen(true)
+                        }>
+                            Log Out
+                        </button>
+                    </Link>
+                </>
+            );
+        } else {
+            return (
+                <>
+                    <li key="signup"><Link to="/signup">SignUp</Link></li>
+                    <li key="login"><Link to="/login">SignIn</Link></li>
+                </>
+            );
+        }
+
     }
 
     return (
