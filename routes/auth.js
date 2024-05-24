@@ -38,29 +38,37 @@ router.post("/signup", (req, res) => {
 })
 
 router.post("/loginurl", (req, res) => {
-    const { email, password } = req.body;
+    try {
 
-    if (!email || !password) {
-        return res.status(422).json({ error: "Please add email and password" })
-    }
-    USER.findOne({ email: email }).then((savedUser) => {
-        if (!savedUser) {
-            return res.status(422).json({ error: "Invalid email" })
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(422).json({ error: "Please add email and password" })
         }
-        bcrypt.compare(password, savedUser.password).then((match) => {
-            if (match) {
-
-                // return res.status(200).json({ message: "Signed in Successfully" })
-                const token = jwt.sign({ _id: savedUser._id }, jwt_secret)
-                const { _id, name, email, userName } = savedUser
-                res.json({ token, user: { _id, name, email, userName }, message: 'login success' })
-
-                console.log({ token, user: { _id, name, email, userName }, message: 'success' })
-            } else {
-                return res.status(422).json({ error: "Invalid password" })
+        USER.findOne({ email: email }).then((savedUser) => {
+            if (!savedUser) {
+                return res.status(422).json({ error: "Invalid email" })
             }
-        }).catch(err => console.log("compare err === ", err))
-    })
+            bcrypt.compare(password, savedUser.password).then((match) => {
+                if (match) {
+
+                    // return res.status(200).json({ message: "Signed in Successfully" })
+                    const token = jwt.sign({ _id: savedUser._id }, jwt_secret)
+                    const { _id, name, email, userName } = savedUser
+                    res.json({ token, user: { _id, name, email, userName }, message: 'login success' })
+
+                    console.log({ token, user: { _id, name, email, userName }, message: 'success' })
+                } else {
+                    return res.status(422).json({ error: "Invalid password" })
+                }
+            }).catch(err => {
+                console.log("compare err === ", err)
+                return res.status(422).json({ error: err })
+            })
+        })
+    } catch (error) {
+        return res.status(422).json({ "msg": "main catch", error: err })
+    }
 })
 
 module.exports = router;
