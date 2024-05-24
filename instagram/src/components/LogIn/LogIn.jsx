@@ -29,7 +29,7 @@ function LogIn() {
             notifyA("invalid email")
             return
         }
-        fetch("/login", {
+        fetch("/loginurl", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"

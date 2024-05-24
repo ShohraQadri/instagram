@@ -37,7 +37,7 @@ router.post("/signup", (req, res) => {
 
 })
 
-router.post("/Login", (req, res) => {
+router.post("/loginurl", (req, res) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
