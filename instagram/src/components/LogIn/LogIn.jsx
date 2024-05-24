@@ -29,7 +29,7 @@ function LogIn() {
             notifyA("invalid email")
             return
         }
-        fetch("https://instagram-clone-i7a5.onrender.com/login", {
+        fetch("/login", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
