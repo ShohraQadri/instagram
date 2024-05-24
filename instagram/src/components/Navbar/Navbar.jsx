@@ -31,7 +31,7 @@ function Navbar({ login }) {
             return (
                 <>
                     <li key="signup"><Link to="/signup">SignUp</Link></li>
-                    <li key="login"><Link to="/login2">SignIn</Link></li>
+                    <li key="login"><Link to="/login">SignIn</Link></li>
                 </>
             );
         }
