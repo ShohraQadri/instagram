@@ -73,7 +73,7 @@ function Navbar({ login }) {
             <ul className="menubar flex gap-2 items-center">
                 {loginStatus()}
             </ul>
-            <ul className=" nav-mobile flex gap-2 items-center">
+            <ul className="menubar nav-mobile flex gap-2 items-center">
                 {loginStatusMobile()}
             </ul>
         </div>
